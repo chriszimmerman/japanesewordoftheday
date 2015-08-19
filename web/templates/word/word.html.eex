@@ -1,0 +1,5 @@
+<center>
+<h1><%= @word.kanji %></h1>
+<h2><%= @word.furigana %> (<%= @word.romaji %>)</h2>
+<h4><%= @word.english%></h4>
+</center>
