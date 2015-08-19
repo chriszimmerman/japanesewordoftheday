@@ -16,7 +16,7 @@ defmodule Japanese.Router do
   scope "/", Japanese do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", WordController, :index
     resources "/words", WordController
   end
 
