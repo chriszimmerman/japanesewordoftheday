@@ -12,7 +12,10 @@ config :japanese, Japanese.Endpoint,
   secret_key_base: "9swq0R8iHzpENPWvNFVl0ITfa3RWGKtvPv6BDh1GG8FfSg52c3b3rv4Ylb22dUGz",
   render_errors: [default_format: "html"],
   pubsub: [name: Japanese.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+           adapter: Phoenix.PubSub.PG2],
+  username: System.get_env("USER"),
+  password: System.get_env("PASSWORD"),
+  database: System.get_env("DB")
 
 # Configures Elixir's Logger
 config :logger, :console,
