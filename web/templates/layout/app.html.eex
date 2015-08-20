@@ -8,7 +8,6 @@
     <meta name="author" content="">
 
     <title>Japanese Word of the Day</title>
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
@@ -23,5 +22,6 @@
 
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </body>
 </html>
