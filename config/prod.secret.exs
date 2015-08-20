@@ -12,4 +12,4 @@ config :japanese, Japanese.Repo,
   username: System.get_env("USER"),
   password: System.get_env("PASSWORD"),
   database: System.get_env("DB"),
-  size: 20 # The amount of database connections in the pool
+  pool_size: 20 # The amount of database connections in the pool
