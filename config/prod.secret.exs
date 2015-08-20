@@ -12,4 +12,5 @@ config :japanese, Japanese.Repo,
   username: System.get_env("USER"),
   password: System.get_env("PASSWORD"),
   database: "dafjdjsjrmvlm5",
+  url: System.get_env("DATABASE_URL"),
   pool_size: 20 # The amount of database connections in the pool
