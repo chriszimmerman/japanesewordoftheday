@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
 
     <title>Japanese Word of the Day</title>
   </head>
@@ -21,8 +23,6 @@
       <%= @inner %>
 
     </div> <!-- /container -->
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
 	<script>require("web/static/js/app")</script>
   </body>
 </html>
