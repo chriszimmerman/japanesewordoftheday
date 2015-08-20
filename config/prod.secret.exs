@@ -11,5 +11,5 @@ config :japanese, Japanese.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: System.get_env("USER"),
   password: System.get_env("PASSWORD"),
-  database: System.get_env("DB"),
+  database: "dafjdjsjrmvlm5",
   pool_size: 20 # The amount of database connections in the pool
