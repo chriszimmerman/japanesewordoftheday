@@ -32,7 +32,7 @@ defmodule Japanese.Mixfile do
     [{:phoenix, "~> 0.16"},
      {:phoenix_ecto, "~> 0.9"},
      {:postgrex, ">= 0.0.0"},
-     {:phoenix_html, "~> 2.0"},
+     {:phoenix_html, "~> 2.0"}, 
      {:phoenix_live_reload, "~> 0.6", only: :dev},
      {:cowboy, "~> 1.0"},
      {:ecto, "~> 0.16.0"},
