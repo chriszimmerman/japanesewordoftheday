@@ -6,11 +6,8 @@ defmodule Japanese.WordController do
   plug :scrub_params, "word" when action in [:create, :update]
 
   def index(conn, _params) do
-    word = Repo.all(Word)
-	|> Enum.shuffle
-	|> Enum.take(1)
-	|> Enum.to_list
-	|> List.first
+    words = Repo.all(Word)
+	word = Enum.at(:random.uniform(length(words)) - 1)
     render(conn, "word.html", word: word)
   end
 
