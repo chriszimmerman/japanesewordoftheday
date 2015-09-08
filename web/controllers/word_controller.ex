@@ -7,6 +7,7 @@ defmodule Japanese.WordController do
 
   def index(conn, _params) do
     words = Repo.all(Word)
+	:random.seed(:erlang.now)
 	word = Enum.at(words, :random.uniform(length(words)) - 1)
     render(conn, "word.html", word: word)
   end
