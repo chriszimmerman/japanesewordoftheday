@@ -36,6 +36,6 @@ defmodule Japanese.Mixfile do
      {:phoenix_live_reload, "~> 0.6", only: :dev},
      {:cowboy, "~> 1.0"},
      {:ecto, "~> 0.16.0"},
-     {:quantum, ">= 1.3.2"}]
+     {:quantum, ">= 1.4.0"}]
   end
 end
