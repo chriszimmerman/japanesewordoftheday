@@ -12,11 +12,11 @@ defmodule Japanese.WordController do
   defp get_todays_word do
     words = Repo.all(Word)
     todays_row_position = rem(length(words), get_days_since_1970)
-	word = Enum.at(words, todays_row_position - 1)
+	Enum.at(words, todays_row_position - 1)
   end
 
   defp get_days_since_1970 do
-    {megaseconds, seconds, _} = :erlang.now
+    {megaseconds, seconds, _} = :os.timestamp
     seconds_since_1970 = megaseconds * 1000000 + seconds
     seconds_in_day = 60 * 60 * 24
     div(seconds_since_1970, seconds_in_day)
