@@ -6,10 +6,20 @@ defmodule Japanese.WordController do
   plug :scrub_params, "word" when action in [:create, :update]
 
   def index(conn, _params) do
+    render(conn, "word.html", word: get_todays_word)
+  end
+
+  defp get_todays_word do
     words = Repo.all(Word)
-	:random.seed(:erlang.now)
-	word = Enum.at(words, :random.uniform(length(words)) - 1)
-    render(conn, "word.html", word: word)
+    todays_row_position = rem(length(words), get_days_since_1970)
+	word = Enum.at(words, todays_row_position - 1)
+  end
+
+  defp get_days_since_1970 do
+    {megaseconds, seconds, _} = :erlang.now
+    seconds_since_1970 = megaseconds * 1000000 + seconds
+    seconds_in_day = 60 * 60 * 24
+    div(seconds_since_1970, seconds_in_day)
   end
 
   def new(conn, _params) do
