@@ -1,2 +1,0 @@
-1) Create script to insert japanese vocab into database
-2) On a daily basis, take one word from the words database and set it as the current word. Display it on the site. Take it out of the 'words' table somehow.
