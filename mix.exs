@@ -18,7 +18,7 @@ defmodule Japanese.Mixfile do
   def application do
     [mod: {Japanese, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex, :ecto, :quantum]]
+                    :phoenix_ecto, :postgrex, :ecto]]
   end
 
   # Specifies which paths to compile per environment
@@ -35,7 +35,6 @@ defmodule Japanese.Mixfile do
      {:phoenix_html, "~> 2.0"}, 
      {:phoenix_live_reload, "~> 0.6", only: :dev},
      {:cowboy, "~> 1.0"},
-     {:ecto, "~> 0.16.0"},
-     {:quantum, ">= 1.4.0"}]
+     {:ecto, "~> 0.16.0"}]
   end
 end
