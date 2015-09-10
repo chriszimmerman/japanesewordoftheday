@@ -21,6 +21,6 @@
 
       <%= @inner %>
 
-    </div> <!-- /container -->
+    </div>
   </body>
 </html>
