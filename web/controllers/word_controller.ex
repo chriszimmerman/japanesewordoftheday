@@ -11,7 +11,7 @@ defmodule Japanese.WordController do
 
   defp get_todays_word do
     words = Repo.all(Word)
-    todays_row_position = rem(length(words), get_days_since_1970)
+    todays_row_position = rem(get_days_since_1970, length(words))
 	Enum.at(words, todays_row_position)
   end
 
