@@ -19,8 +19,9 @@
         </ul>
       </div>
 
-      <%= @inner %>
+	  <%= @inner %>
 
+	  <center><a href="https://github.com/chriszimmerman/japanesewordoftheday">The source code for this app is on GitHub</a></center>
     </div>
   </body>
 </html>
