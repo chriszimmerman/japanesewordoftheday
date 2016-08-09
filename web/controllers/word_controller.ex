@@ -10,15 +10,25 @@ defmodule Japanese.WordController do
   end
 
   defp get_todays_word do
-    words = Repo.all(Word)
-    todays_row_position = rem(get_days_since_1970, length(words))
-	Enum.at(words, todays_row_position)
+  	word_count = Repo.one(from word in Word, select: count("*"))
+    todays_row_position = rem(get_days_since_1970, word_count)
+
+    Repo.one(
+    	from word in Word,
+			limit: 1,
+			offset: ^todays_row_position
+		)
   end
 
   defp get_days_since_1970 do
-    {megaseconds, seconds, _} = :os.timestamp
+    { megaseconds, seconds, _ } = :os.timestamp
     seconds_since_1970 = megaseconds * 1000000 + seconds
-    seconds_in_day = 60 * 60 * 24
+
+    seconds_in_minute = 60
+    minutes_in_hour = 60
+    hours_in_day = 24
+    seconds_in_day = seconds_in_minute * minutes_in_hour * hours_in_day
+
     div(seconds_since_1970, seconds_in_day)
   end
 end
